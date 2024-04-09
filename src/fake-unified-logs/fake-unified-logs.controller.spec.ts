@@ -16,7 +16,7 @@ describe('FakeUnifiedLogsController', () => {
     );
   });
 
-  describe('fake-unified-controllers', () => {
+  describe('/fake-unified-controllers', () => {
     it('should be defined', () => {
       expect(controller).toBeDefined();
     });

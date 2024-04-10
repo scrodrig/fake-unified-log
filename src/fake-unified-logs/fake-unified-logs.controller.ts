@@ -26,7 +26,11 @@ export class FakeUnifiedLogsController {
 
   @Post()
   @HttpCode(200)
-  create(@Body(ValidationPipe) postFakeDto: PostFakeDto): StatusResponse {
+  create(
+    @Req() request: Request,
+    @Body(ValidationPipe) postFakeDto: PostFakeDto,
+  ): StatusResponse {
+    console.log(request.headers);
     return this.fakeUnifiedLogsService.create(postFakeDto);
   }
 }

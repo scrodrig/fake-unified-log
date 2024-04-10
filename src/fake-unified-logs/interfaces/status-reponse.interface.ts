@@ -1,3 +1,3 @@
 export interface StatusResponse {
-  success: 'ok' | 'error';
+  success: 'Ok' | 'error';
 }

@@ -1,7 +1,7 @@
 import { IsEmail, IsNotEmpty, IsString } from 'class-validator';
-import { FakeLog } from '../interfaces/fake-log.interface';
+import { FakeLogDto } from '../interfaces';
 
-export class PostFakeDto implements FakeLog {
+export class PostFakeDto implements FakeLogDto {
   @IsString()
   @IsNotEmpty()
   hostname: string;

@@ -38,4 +38,34 @@ export class FakeUnifiedLogsController {
     console.log(request.headers);
     return this.fakeUnifiedLogsService.start(postFakeDto);
   }
+
+  @Post('end')
+  @HttpCode(200)
+  end(
+    @Req() request: Request,
+    @Body(ValidationPipe) postFakeDto: PostFakeDto,
+  ): StatusResponse {
+    console.log(request.headers);
+    return this.fakeUnifiedLogsService.start(postFakeDto);
+  }
+
+  @Post('flow')
+  @HttpCode(200)
+  flow(
+    @Req() request: Request,
+    @Body(ValidationPipe) postFakeDto: PostFakeDto,
+  ): StatusResponse {
+    console.log(request.headers);
+    return this.fakeUnifiedLogsService.start(postFakeDto);
+  }
+
+  @Post('exception')
+  @HttpCode(200)
+  exception(
+    @Req() request: Request,
+    @Body(ValidationPipe) postFakeDto: PostFakeDto,
+  ): StatusResponse {
+    console.log(request.headers);
+    return this.fakeUnifiedLogsService.start(postFakeDto);
+  }
 }

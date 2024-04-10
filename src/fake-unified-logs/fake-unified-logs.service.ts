@@ -6,7 +6,31 @@ import { FakeLogDto, StatusResponse, FakeLog } from './interfaces';
 export class FakeUnifiedLogsService {
   private readonly logs: FakeLog[] = fakeLogs;
 
-  create(log: FakeLogDto): StatusResponse {
+  start(log: FakeLogDto): StatusResponse {
+    // this.logs.push(log);
+    console.log(log);
+    return {
+      success: 'Ok',
+    };
+  }
+
+  end(log: FakeLogDto): StatusResponse {
+    // this.logs.push(log);
+    console.log(log);
+    return {
+      success: 'Ok',
+    };
+  }
+
+  flow(log: FakeLogDto): StatusResponse {
+    // this.logs.push(log);
+    console.log(log);
+    return {
+      success: 'Ok',
+    };
+  }
+
+  exception(log: FakeLogDto): StatusResponse {
     // this.logs.push(log);
     console.log(log);
     return {

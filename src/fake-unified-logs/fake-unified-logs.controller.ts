@@ -12,7 +12,7 @@ import { FakeUnifiedLogsService } from './fake-unified-logs.service';
 import { FakeLog, StatusResponse } from './interfaces/';
 import { PostFakeDto } from './dto/post-fake-log.dto';
 
-@Controller('fake-unified-logs')
+@Controller('fake-unified-logs/registry')
 export class FakeUnifiedLogsController {
   constructor(
     private readonly fakeUnifiedLogsService: FakeUnifiedLogsService,
@@ -24,13 +24,18 @@ export class FakeUnifiedLogsController {
     return this.fakeUnifiedLogsService.findAll();
   }
 
-  @Post()
+  @Get('greeting')
+  getHello(): string {
+    return 'Greeting from fake log events';
+  }
+
+  @Post('start')
   @HttpCode(200)
-  create(
+  start(
     @Req() request: Request,
     @Body(ValidationPipe) postFakeDto: PostFakeDto,
   ): StatusResponse {
     console.log(request.headers);
-    return this.fakeUnifiedLogsService.create(postFakeDto);
+    return this.fakeUnifiedLogsService.start(postFakeDto);
   }
 }

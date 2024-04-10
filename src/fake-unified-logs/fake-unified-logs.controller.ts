@@ -9,9 +9,8 @@ import {
 } from '@nestjs/common';
 import { Request } from 'express';
 import { FakeUnifiedLogsService } from './fake-unified-logs.service';
-import { FakeLog } from './interfaces/fake-log.interface';
+import { FakeLog, StatusResponse } from './interfaces/';
 import { PostFakeDto } from './dto/post-fake-log.dto';
-import { StatusResponse } from './interfaces/status-reponse.interface';
 
 @Controller('fake-unified-logs')
 export class FakeUnifiedLogsController {

@@ -1,0 +1,51 @@
+[
+  "{{repeat(5, 7)}}",
+  {
+    "EAI_LOG": {
+      "EAI_LOG_HEADER": {
+        "START_TIME_ORIGIN": "{{date(new Date(2014, 0, 1), new Date(), \"YYYY-MM-ddThh:mm:ss Z\")}}",
+        "ENDTIME": "{{date(new Date(2014, 0, 1), new Date(), \"YYYY-MM-ddThh:mm:ss Z\")}}",
+        "NCODE": "COM-{{integer(100,999)}}",
+        "ISERROR": "{{bool()}}",
+        "USERNAME": "{{username()}}",
+        "STARTTIME": "{{date(new Date(2014, 0, 1), new Date(), \"YYYY-MM-ddThh:mm:ss Z\")}}",
+        "COUNTRY_CODE": "PT",
+        "HOSTNAME": "GE.{{lorem(1, \"words\").toUpperCase()}}.05.activity.companyenergia.corp",
+        "TRACKINGID": "{{objectId()}}",
+        "ECODE": "COM-{{integer(100,999)}}",
+        "ACTION": "acknowledge",
+        "SYSTEM_FUNCTION_VERSION": "{{integer(0,5)}}.{{integer(1,10)}}",
+        "APPLICATION": "CCB",
+        "TYPE": "Processes",
+        "START_TIME_SITE": "{{date(new Date(2014, 0, 1), new Date(), \"YYYY-MM-ddThh:mm:ss Z\")}}",
+        "STATUS_RESP": "CCB",
+        "VER_SR": "2.3.3c",
+        "COMPONENT": "BW_ARPU_FV2_FT-BW_ARPU_FV2_FT-1",
+        "STEP": "{{integer(1,10)}}",
+        "EDESCRIPTION": "{{lorem(1, \"paragraphs\")}}",
+        "COMMENTS": "{{lorem(1, \"paragraphs\")}}",
+        "HAS_DEBUG": "Y",
+        "DATACENTER_SITE": "PT",
+        "NDESCRIPTION": "{{lorem(1, \"paragraphs\")}}",
+        "SYSTEM_STEP_RETRY": "{{integer(1,5)}}",
+        "EXTERNAL_TRACKING_ID": "{{objectId()}}",
+        "CENTRAL_LOG_SYSTEM_ID": "{{lorem(1, \"words\").toUpperCase()}}",
+        "DOMAIN": "{{lorem(1, \"words\").toUpperCase()}}",
+        "OUT_SLA": "{{integer(0,3)}}",
+        "SERVICE": "Cliente",
+        "DURATION": "{{integer(1,5)}}"
+      },
+      "EAI_LOG_KEYS_GROUPS": {
+        "EAI_LOG_KEYS": {
+          "Header_History_domain": "APP_{{lorem(1, \"words\").toUpperCase()}}"
+        }
+      },
+      "EAI_LOG_DEBUG": {
+        "SYSTEM_STEP_END_MSG_TYPE": "text/xml;",
+        "STARTMSG": "<data:Data xmlns:head=\"http://company/SharedResources/Schemas/Header\" xmlns:cli=\"http://xmlns.jitxxpsg.com/SharedResources/SchemaDefinitions/Services/Cliente\" xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:shar=\"http://xmlns.jitxxpsg.com/EAI/SharedResources\" xmlns:data=\"http://xmlns.jitxxpsg.com/Processes/Cliente/Data\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n    <ns0:Header xmlns:ns0=\"http://xmlns.jitxxpsg.com/EAI/SharedResources\">\n        <ns0:sequenceID xsi:nil=\"true\"/>\n        <ns0:timeout>60000</ns0:timeout>\n        <ns0:tries xsi:nil=\"true\"/>\n        <ns0:creationTime>{{date(new Date(2014, 0, 1), new Date(), \"YYYY-MM-ddThh:mm:ss Z\")}}</ns0:creationTime>\n        <ns0:trackingID>{{objectId()}}</ns0:trackingID>\n        <ns0:errorID xsi:nil=\"true\"/>\n        <History xmlns=\"http://xmlns.jitxxpsg.com/EAI/SharedResources\">\n            <owner xsi:nil=\"true\"/>\n            <domain>APP_OPENSGC</domain>\n            <serviceName>PROC-{{lorem(1, \"words\").toUpperCase()}}</serviceName>\n            <action>PROC</action>\n            <version xsi:nil=\"true\"/>\n            <timestamp>{{date(new Date(2014, 0, 1), new Date(), \"YYYY-MM-ddThh:mm:ss Z\")}}</timestamp>\n            <component xsi:nil=\"true\"/>\n            <transport xsi:nil=\"true\"/>\n            <subject xsi:nil=\"true\"/>\n            <step>{{integer(1,10)}}</step>\n            <application>APP_{{lorem(1, \"words\").toUpperCase()}}</application>\n            <trackingID xsi:nil=\"true\"/>\n        </History>\n        <History xmlns=\"http://xmlns.jitxxpsg.com/EAI/SharedResources\">\n            <owner xsi:nil=\"true\"/>\n            <domain>APP_OPENSGC</domain>\n            <serviceName>ACK_REQ</serviceName>\n            <action>ACK</action>\n            <version xsi:nil=\"true\"/>\n            <timestamp>{{date(new Date(2014, 0, 1), new Date(), \"YYYY-MM-ddThh:mm:ss Z\")}}</timestamp>\n            <component xsi:nil=\"true\"/>\n            <transport xsi:nil=\"true\"/>\n            <subject xsi:nil=\"true\"/>\n            <step>{{integer(1,10)}}</step>\n            <application>APP_{{lorem(1, \"words\").toUpperCase()}}</application>\n            <trackingID xsi:nil=\"true\"/>\n        </History>\n        <ns0:History>\n            <ns0:domain>EAI</ns0:domain>\n            <ns0:type>Processes</ns0:type>\n            <ns0:serviceName>GatewayHTTP</ns0:serviceName>\n            <ns0:action>asynchronousTopic</ns0:action>\n            <ns0:version/>\n            <ns0:step>3</ns0:step>\n            <ns0:application>APP_{{lorem(1, \"words\").toUpperCase()}}</ns0:application>\n        </ns0:History>\n        <Credentials xmlns=\"http://xmlns.jitxxpsg.com/EAI/SharedResources\" xsi:nil=\"true\"/>\n        <eDetail xmlns=\"http://xmlns.jitxxpsg.com/EAI/SharedResources\">\n            <eCodes xsi:nil=\"true\"/>\n            <eNative>\n                <eCode>17</eCode>\n                <eDescription>0#OK</eDescription>\n            </eNative>\n        </eDetail>\n        <ns0:handleError xsi:nil=\"true\"/>\n        <ns0:correlationTrackingID xsi:nil=\"true\"/>\n        <ns0:parentLogID xsi:nil=\"true\"/>\n    </ns0:Header>\n    <Body xmlns=\"http://xmlns.jitxxpsg.com/SharedResources/SchemaDefinitions/Services/Cliente\">\n        <Conta NIF=\"PT12345\" codConta=\"222369-{{objectId()}}\">\n            <Endereco/>\n            <IdExterno idCliente=\"10002636\" sistema=\"OPENSGCPOWER\"/>\n        </Conta>\n    </Body>\n</data:Data>",
+        "ENDMSG": "<ns0:ErrorReport xmlns:ns0=\"http://www.jitxx.com/pe/EngineTypes\">\n    <StackTrace>Job-1168094 Error in [FrameworkResources/routeEvent.process/No Routing Destination]\nNo Valid Routing Destination\n\tat com.jitxx.pe.core.GenerateErrorActivity.eval(Unknown Source)\n\tat com.jitxx.pe.plugin.Activity.eval(Unknown Source)\n\tat com.jitxx.pe.core.TaskImpl.eval(Unknown Source)\n\tat com.jitxx.pe.core.Job.a(Unknown Source)\n\tat com.jitxx.pe.core.Job.k(Unknown Source)\n\tat com.jitxx.pe.core.JobDispatcher$JobCourier.a(Unknown Source)\n\tat com.jitxx.pe.core.JobDispatcher$JobCourier.run(Unknown Source)\n</StackTrace>\n    <Msg>No Valid Routing Destination</Msg>\n    <FullClass>com.jitxx.pe.plugin.ActivityException</FullClass>\n    <Class>ActivityException</Class>\n    <ProcessStack>BusinessDomain/ARPU/Processes/Cliente/acknowledge/starter.process/mainInterfaces>SharedResources/Processes/Mandatory/mainInterfaces.process/dynamic logical Interfaces>BusinessDomain/ARPU/Processes/Cliente/acknowledge/logical.process/routeEvent>FrameworkResources/routeEvent.process/No Routing Destination</ProcessStack>\n    <MsgCode>COM-{{integer(100,999)}}</MsgCode>\n</ns0:ErrorReport>",
+        "SYSTEM_STEP_START_MSG_TYPE": "text/xml;"
+      }
+    }
+  }
+]

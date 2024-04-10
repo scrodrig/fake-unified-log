@@ -25,12 +25,12 @@ export class FakeUnifiedLogsController {
   }
 
   @Get('greeting')
-  getHello(): string {
-    return 'Greeting from fake log events';
+  getHello(): { message: string } {
+    return { message: 'Greeting from fake log events' };
   }
 
   @Post('start')
-  @HttpCode(200)
+  @HttpCode(201)
   start(
     @Req() request: Request,
     @Body(ValidationPipe) postFakeDto: PostFakeDto,

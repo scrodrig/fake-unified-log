@@ -1,5 +1,12 @@
 import { Expose } from 'class-transformer';
-import { IsDateString, IsDefined, IsString } from 'class-validator';
+import {
+  IsDateString,
+  IsDefined,
+  IsEmail,
+  IsEnum,
+  IsOptional,
+  IsString,
+} from 'class-validator';
 
 export class HeaderDTO {
   @IsString()
@@ -27,12 +34,13 @@ export class HeaderDTO {
   @Expose({ name: 'x-timestamp' })
   xTimeStamp: string;
 
-  @IsString()
+  @IsEmail()
   @IsDefined()
+  @IsOptional()
   @Expose({ name: 'x-user' })
   xUser: string;
 
-  @IsString()
+  @IsEnum(['SAP', 'TIBCO', 'CENTRIC', 'CPI'])
   @IsDefined()
   @Expose({ name: 'x-platform' })
   xPlatform: string;
@@ -42,8 +50,8 @@ export class HeaderDTO {
   @Expose({ name: 'x-step' })
   xStep: string;
 
-  @IsString()
-  @IsDefined()
-  @Expose({ name: 'Content-Type' || 'content-type' })
-  contentType: string;
+  // @IsString()
+  // @IsDefined()
+  // @Expose({ name: 'Content-Type' })
+  // contentType: string;
 }

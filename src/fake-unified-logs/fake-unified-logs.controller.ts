@@ -11,6 +11,8 @@ import { Request } from 'express';
 import { FakeUnifiedLogsService } from './fake-unified-logs.service';
 import { FakeLog, StatusResponse } from './interfaces/';
 import { PostFakeDto } from './dto/post-fake-log.dto';
+import { HeaderDTO } from './dto/Header.dto';
+import { RequestHeaders } from './decorators/request-headers.decorator';
 
 @Controller('fake-unified-logs/registry')
 export class FakeUnifiedLogsController {
@@ -32,10 +34,12 @@ export class FakeUnifiedLogsController {
   @Post('start')
   @HttpCode(201)
   start(
-    @Req() request: Request,
+    // @Req() request: Request,
+    @RequestHeaders(new ValidationPipe({ validateCustomDecorators: true }))
+    headers: HeaderDTO,
     @Body(ValidationPipe) postFakeDto: PostFakeDto,
   ): StatusResponse {
-    console.log(request.headers);
+    console.log(headers);
     return this.fakeUnifiedLogsService.start(postFakeDto);
   }
 
@@ -67,5 +71,10 @@ export class FakeUnifiedLogsController {
   ): StatusResponse {
     console.log(request.headers);
     return this.fakeUnifiedLogsService.start(postFakeDto);
+  }
+
+  @Get('hello')
+  getSHello(): string {
+    return 'Hello from FakeUnifiedLogsController!';
   }
 }

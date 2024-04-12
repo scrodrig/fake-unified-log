@@ -9,7 +9,6 @@ import { Type } from 'class-transformer';
 export class ContentDTO {
   @IsString()
   @IsDefined()
-  @IsNotEmpty()
   inputPayload: string;
 
   @IsString()

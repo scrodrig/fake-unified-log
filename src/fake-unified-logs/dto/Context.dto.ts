@@ -2,15 +2,17 @@ import {
   IsDefined,
   IsEnum,
   IsNotEmpty,
+  IsNumber,
   IsNumberString,
+  IsOptional,
   IsString,
 } from 'class-validator';
 
 export class ContextDTO {
-  @IsNumberString()
+  @IsNumber()
   @IsDefined()
   @IsNotEmpty()
-  elpased: number;
+  elapsed: number;
 
   @IsEnum(['0', '1'])
   isError: '0' | '1';
@@ -22,9 +24,11 @@ export class ContextDTO {
   eDescription: string;
 
   @IsString()
+  @IsOptional()
   nCode: string;
 
   @IsString()
+  @IsOptional()
   nDescription: string;
 
   @IsDefined()

@@ -1,11 +1,11 @@
 export interface FakeLogDto {
-  applicationType: 'Processes' | 'Services' | 'Interfaces';
+  applicationType: 'Process' | 'Service' | 'Interface';
   domain: string;
   content: {
     inputPayload: string;
     payload: string;
     context: {
-      elpased: number;
+      elapsed: number;
       isError: '0' | '1';
       eCode: string;
       eDescription: string;

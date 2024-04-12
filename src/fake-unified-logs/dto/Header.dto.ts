@@ -12,7 +12,7 @@ import {
 export class HeaderDTO {
   @IsString()
   @IsDefined()
-  @Expose({ name: 'client_id' }) // required as headers are case insensitive
+  @Expose({ name: 'client_id' })
   clientId: string;
 
   @IsString()

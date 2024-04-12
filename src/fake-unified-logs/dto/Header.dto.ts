@@ -4,6 +4,7 @@ import {
   IsDefined,
   IsEmail,
   IsEnum,
+  IsNumberString,
   IsOptional,
   IsString,
 } from 'class-validator';
@@ -45,10 +46,10 @@ export class HeaderDTO {
   @Expose({ name: 'x-platform' })
   xPlatform: string;
 
-  @IsString()
+  @IsNumberString()
   @IsDefined()
   @Expose({ name: 'x-step' })
-  xStep: string;
+  xStep: number;
 
   // @IsString()
   // @IsDefined()

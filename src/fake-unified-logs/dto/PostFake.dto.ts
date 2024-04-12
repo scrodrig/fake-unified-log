@@ -3,6 +3,7 @@ import {
   IsEnum,
   IsNotEmpty,
   IsObject,
+  IsOptional,
   IsString,
   ValidateNested,
 } from 'class-validator';
@@ -11,9 +12,9 @@ import { ContentDTO } from './Content.dto';
 import { Type } from 'class-transformer';
 
 export class PostFakeDto implements FakeLogDto {
-  @IsEnum(['Processes', 'Services', 'Interfaces'])
+  @IsEnum(['Process', 'Service', 'Interface'])
   @IsDefined()
-  applicationType: 'Processes' | 'Services' | 'Interfaces';
+  applicationType: 'Process' | 'Service' | 'Interface';
 
   @IsString()
   @IsDefined()
@@ -26,10 +27,10 @@ export class PostFakeDto implements FakeLogDto {
   content: ContentDTO;
 
   @IsEnum(['GET', 'POST', 'PUT'])
-  @IsDefined()
+  @IsOptional()
   requestMethod: 'GET' | 'POST' | 'PUT';
 
   @IsString()
-  @IsDefined()
+  @IsOptional()
   rawRequestUri: string;
 }

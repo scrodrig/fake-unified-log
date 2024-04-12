@@ -10,7 +10,7 @@ import {
 import { Request } from 'express';
 import { FakeUnifiedLogsService } from './fake-unified-logs.service';
 import { FakeLog, StatusResponse } from './interfaces/';
-import { PostFakeDto } from './dto/post-fake-log.dto';
+import { PostFakeDto } from './dto/PostFake.dto';
 import { HeaderDTO } from './dto/Header.dto';
 import { RequestHeaders } from './decorators/request-headers.decorator';
 

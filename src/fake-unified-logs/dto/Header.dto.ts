@@ -50,9 +50,4 @@ export class HeaderDTO {
   @IsDefined()
   @Expose({ name: 'x-step' })
   xStep: number;
-
-  // @IsString()
-  // @IsDefined()
-  // @Expose({ name: 'Content-Type' })
-  // contentType: string;
 }

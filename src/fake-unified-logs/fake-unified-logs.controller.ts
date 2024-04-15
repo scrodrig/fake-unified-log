@@ -14,6 +14,7 @@ import { FakeLog, StatusResponse } from './interfaces/';
 import { PostFakeDto } from './dto/PostFake.dto';
 import { HeaderDTO } from './dto/Header.dto';
 import { RequestHeaders } from './decorators/request-headers.decorator';
+import { v4 as uuidv4 } from 'uuid';
 
 @Controller('fake-unified-logs/registry')
 export class FakeUnifiedLogsController {
@@ -34,7 +35,7 @@ export class FakeUnifiedLogsController {
 
   @Post('start')
   @Header('x-timestamp', () => new Date().toISOString())
-  @Header('x-correlation-id', () => Math.random().toString(36).substring(2))
+  @Header('x-correlation-id', () => uuidv4())
   @HttpCode(201)
   start(
     @RequestHeaders(new ValidationPipe({ validateCustomDecorators: true }))

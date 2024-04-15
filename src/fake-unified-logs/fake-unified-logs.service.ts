@@ -1,16 +1,21 @@
 import { Injectable } from '@nestjs/common';
 import { logs as fakeLogs } from './data/fake-logs';
 import { FakeLogDto, StatusResponse, FakeLog } from './interfaces';
+import { HeaderDTO } from './dto/Header.dto';
 
 @Injectable()
 export class FakeUnifiedLogsService {
   private readonly logs: FakeLog[] = fakeLogs;
 
-  start(log: FakeLogDto): StatusResponse {
-    // this.logs.push(log);
-    console.log(log);
+  start(headers: HeaderDTO, log: FakeLogDto): StatusResponse {
+    const { forceError } = log;
+    if (!forceError) {
+      return {
+        success: 'Ok',
+      };
+    }
     return {
-      success: 'Ok',
+      success: 'error',
     };
   }
 

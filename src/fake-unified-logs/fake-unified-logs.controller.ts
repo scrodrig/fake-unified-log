@@ -34,43 +34,41 @@ export class FakeUnifiedLogsController {
   @Post('start')
   @HttpCode(201)
   start(
-    // @Req() request: Request,
     @RequestHeaders(new ValidationPipe({ validateCustomDecorators: true }))
     headers: HeaderDTO,
     @Body(ValidationPipe) postFakeDto: PostFakeDto,
   ): StatusResponse {
-    console.log(headers);
-    return this.fakeUnifiedLogsService.start(postFakeDto);
+    return this.fakeUnifiedLogsService.start(headers, postFakeDto);
   }
 
   @Post('end')
   @HttpCode(200)
   end(
-    @Req() request: Request,
+    @RequestHeaders(new ValidationPipe({ validateCustomDecorators: true }))
+    headers: HeaderDTO,
     @Body(ValidationPipe) postFakeDto: PostFakeDto,
   ): StatusResponse {
-    console.log(request.headers);
-    return this.fakeUnifiedLogsService.start(postFakeDto);
+    return this.fakeUnifiedLogsService.start(headers, postFakeDto);
   }
 
   @Post('flow')
   @HttpCode(200)
   flow(
-    @Req() request: Request,
+    @RequestHeaders(new ValidationPipe({ validateCustomDecorators: true }))
+    headers: HeaderDTO,
     @Body(ValidationPipe) postFakeDto: PostFakeDto,
   ): StatusResponse {
-    console.log(request.headers);
-    return this.fakeUnifiedLogsService.start(postFakeDto);
+    return this.fakeUnifiedLogsService.start(headers, postFakeDto);
   }
 
   @Post('exception')
   @HttpCode(200)
   exception(
-    @Req() request: Request,
+    @RequestHeaders(new ValidationPipe({ validateCustomDecorators: true }))
+    headers: HeaderDTO,
     @Body(ValidationPipe) postFakeDto: PostFakeDto,
   ): StatusResponse {
-    console.log(request.headers);
-    return this.fakeUnifiedLogsService.start(postFakeDto);
+    return this.fakeUnifiedLogsService.start(headers, postFakeDto);
   }
 
   @Get('hello')

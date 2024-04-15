@@ -46,6 +46,8 @@ export class FakeUnifiedLogsController {
   }
 
   @Post('end')
+  @Header('x-timestamp', () => new Date().toISOString())
+  @Header('x-correlation-id', () => uuidv4())
   @HttpCode(200)
   end(
     @RequestHeaders(new ValidationPipe({ validateCustomDecorators: true }))
@@ -56,6 +58,8 @@ export class FakeUnifiedLogsController {
   }
 
   @Post('flow')
+  @Header('x-timestamp', () => new Date().toISOString())
+  @Header('x-correlation-id', () => uuidv4())
   @HttpCode(200)
   flow(
     @RequestHeaders(new ValidationPipe({ validateCustomDecorators: true }))
@@ -66,6 +70,8 @@ export class FakeUnifiedLogsController {
   }
 
   @Post('exception')
+  @Header('x-timestamp', () => new Date().toISOString())
+  @Header('x-correlation-id', () => uuidv4())
   @HttpCode(200)
   exception(
     @RequestHeaders(new ValidationPipe({ validateCustomDecorators: true }))

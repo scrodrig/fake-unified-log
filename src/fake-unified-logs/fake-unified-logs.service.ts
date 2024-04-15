@@ -2,45 +2,26 @@ import { Injectable } from '@nestjs/common';
 import { logs as fakeLogs } from './data/fake-logs';
 import { FakeLogDto, StatusResponse, FakeLog } from './interfaces';
 import { HeaderDTO } from './dto/Header.dto';
+import { mockRequest } from './utils/mock-request';
 
 @Injectable()
 export class FakeUnifiedLogsService {
   private readonly logs: FakeLog[] = fakeLogs;
 
   start(headers: HeaderDTO, log: FakeLogDto): StatusResponse {
-    const { forceError } = log;
-    if (!forceError) {
-      return {
-        success: 'Ok',
-      };
-    }
-    return {
-      success: 'error',
-    };
+    return mockRequest({ headers, log });
   }
 
-  end(log: FakeLogDto): StatusResponse {
-    // this.logs.push(log);
-    console.log(log);
-    return {
-      success: 'Ok',
-    };
+  end(headers: HeaderDTO, log: FakeLogDto): StatusResponse {
+    return mockRequest({ headers, log });
   }
 
-  flow(log: FakeLogDto): StatusResponse {
-    // this.logs.push(log);
-    console.log(log);
-    return {
-      success: 'Ok',
-    };
+  flow(headers: HeaderDTO, log: FakeLogDto): StatusResponse {
+    return mockRequest({ headers, log });
   }
 
-  exception(log: FakeLogDto): StatusResponse {
-    // this.logs.push(log);
-    console.log(log);
-    return {
-      success: 'Ok',
-    };
+  exception(headers: HeaderDTO, log: FakeLogDto): StatusResponse {
+    return mockRequest({ headers, log });
   }
 
   findAll(): FakeLog[] {

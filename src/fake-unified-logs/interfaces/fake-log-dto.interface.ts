@@ -16,4 +16,6 @@ export interface FakeLogDto {
   };
   requestMethod: 'GET' | 'POST' | 'PUT';
   rawRequestUri: string;
+  //Only for testing purposes
+  forceError: boolean;
 }

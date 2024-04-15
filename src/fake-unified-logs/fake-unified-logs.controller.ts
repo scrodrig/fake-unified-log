@@ -2,6 +2,7 @@ import {
   Body,
   Controller,
   Get,
+  Header,
   HttpCode,
   Post,
   Req,
@@ -32,6 +33,8 @@ export class FakeUnifiedLogsController {
   }
 
   @Post('start')
+  @Header('x-timestamp', () => new Date().toISOString())
+  @Header('x-correlation-id', () => Math.random().toString(36).substring(2))
   @HttpCode(201)
   start(
     @RequestHeaders(new ValidationPipe({ validateCustomDecorators: true }))

@@ -54,7 +54,7 @@ export class FakeUnifiedLogsController {
     headers: HeaderDTO,
     @Body(ValidationPipe) postFakeDto: PostFakeDto,
   ): StatusResponse {
-    return this.fakeUnifiedLogsService.start(headers, postFakeDto);
+    return this.fakeUnifiedLogsService.end(headers, postFakeDto);
   }
 
   @Post('flow')
@@ -66,7 +66,7 @@ export class FakeUnifiedLogsController {
     headers: HeaderDTO,
     @Body(ValidationPipe) postFakeDto: PostFakeDto,
   ): StatusResponse {
-    return this.fakeUnifiedLogsService.start(headers, postFakeDto);
+    return this.fakeUnifiedLogsService.flow(headers, postFakeDto);
   }
 
   @Post('exception')
@@ -78,7 +78,7 @@ export class FakeUnifiedLogsController {
     headers: HeaderDTO,
     @Body(ValidationPipe) postFakeDto: PostFakeDto,
   ): StatusResponse {
-    return this.fakeUnifiedLogsService.start(headers, postFakeDto);
+    return this.fakeUnifiedLogsService.exception(headers, postFakeDto);
   }
 
   @Get('hello')

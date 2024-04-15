@@ -1,4 +1,5 @@
 import {
+  IsBoolean,
   IsDefined,
   IsEnum,
   IsNotEmpty,
@@ -27,10 +28,14 @@ export class PostFakeDto implements FakeLogDto {
   content: ContentDTO;
 
   @IsEnum(['GET', 'POST', 'PUT'])
-  @IsOptional()
+  @IsDefined()
   requestMethod: 'GET' | 'POST' | 'PUT';
 
   @IsString()
-  @IsOptional()
+  @IsDefined()
   rawRequestUri: string;
+
+  @IsBoolean()
+  @IsOptional()
+  forceError: boolean;
 }

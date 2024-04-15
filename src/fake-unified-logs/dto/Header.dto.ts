@@ -1,5 +1,6 @@
 import { Expose } from 'class-transformer';
 import {
+  IsBoolean,
   IsDateString,
   IsDefined,
   IsEmail,
@@ -50,4 +51,8 @@ export class HeaderDTO {
   @IsDefined()
   @Expose({ name: 'x-step' })
   xStep: number;
+
+  @IsBoolean()
+  @IsOptional()
+  forceError: boolean;
 }

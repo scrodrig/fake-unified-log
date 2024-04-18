@@ -14,45 +14,41 @@ export class HeaderDTO {
   @IsString()
   @IsDefined()
   @Expose({ name: 'client_id' })
-  clientId: string;
+  'client_id': string;
 
   @IsString()
   @IsDefined()
   @Expose({ name: 'client_secret' })
-  clientSecret: string;
+  'client_secret': string;
 
   @IsString()
   @IsDefined()
   @Expose({ name: 'x-correlation-id' })
-  xCorrelationId: string;
+  'x-correlation-id': string;
 
   @IsString()
   @IsDefined()
   @Expose({ name: 'x-api-name' })
-  xApiName: string;
+  'x-api-name': string;
 
   @IsDateString()
   @IsDefined()
   @Expose({ name: 'x-timestamp' })
-  xTimeStamp: string;
+  'x-timestamp': string;
 
   @IsEmail()
   @IsDefined()
   @IsOptional()
   @Expose({ name: 'x-user' })
-  xUser: string;
+  'x-user': string;
 
   @IsEnum(['SAP', 'TIBCO', 'CENTRIC', 'CPI'])
   @IsDefined()
   @Expose({ name: 'x-platform' })
-  xPlatform: string;
+  'x-platform': string;
 
   @IsNumberString()
   @IsDefined()
   @Expose({ name: 'x-step' })
-  xStep: number;
-
-  @IsBoolean()
-  @IsOptional()
-  forceError: boolean;
+  'x-step': number;
 }

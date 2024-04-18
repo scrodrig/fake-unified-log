@@ -1,4 +1,5 @@
 import { createParamDecorator, ExecutionContext } from '@nestjs/common';
+import { plainToClass } from 'class-transformer';
 
 export const RequestHeaders = createParamDecorator(
   async (property: string | number | symbol, ctx: ExecutionContext) => {
@@ -12,6 +13,10 @@ export const RequestHeaders = createParamDecorator(
       return headers[property];
     }
 
-    return headers;
+    const dto = plainToClass(property, headers, {
+      excludeExtraneousValues: true,
+    });
+
+    return dto;
   },
 );

@@ -3,7 +3,6 @@ import {
   IsEnum,
   IsNotEmpty,
   IsNumber,
-  IsNumberString,
   IsOptional,
   IsString,
 } from 'class-validator';
@@ -18,9 +17,11 @@ export class ContextDTO {
   isError: '0' | '1';
 
   @IsString()
+  @IsOptional()
   eCode: string;
 
   @IsString()
+  @IsOptional()
   eDescription: string;
 
   @IsString()

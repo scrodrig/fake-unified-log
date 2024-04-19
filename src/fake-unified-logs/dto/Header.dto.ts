@@ -2,7 +2,6 @@ import { Expose } from 'class-transformer';
 import {
   IsDateString,
   IsDefined,
-  IsEmail,
   IsNumberString,
   IsOptional,
   IsString,
@@ -34,7 +33,7 @@ export class HeaderDTO {
   @Expose({ name: 'x-timestamp' })
   'x-timestamp': string;
 
-  @IsEmail()
+  @IsString()
   @IsDefined()
   @IsOptional()
   @Expose({ name: 'x-user' })

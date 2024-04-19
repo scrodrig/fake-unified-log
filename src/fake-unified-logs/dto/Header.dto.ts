@@ -1,10 +1,8 @@
 import { Expose } from 'class-transformer';
 import {
-  IsBoolean,
   IsDateString,
   IsDefined,
   IsEmail,
-  IsEnum,
   IsNumberString,
   IsOptional,
   IsString,
@@ -42,7 +40,7 @@ export class HeaderDTO {
   @Expose({ name: 'x-user' })
   'x-user': string;
 
-  @IsEnum(['SAP', 'TIBCO', 'CENTRIC', 'CPI'])
+  @IsString()
   @IsDefined()
   @Expose({ name: 'x-platform' })
   'x-platform': string;

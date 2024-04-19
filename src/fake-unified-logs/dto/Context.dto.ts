@@ -14,6 +14,7 @@ export class ContextDTO {
   elapsed: number;
 
   @IsEnum(['0', '1'])
+  @IsOptional()
   isError: '0' | '1';
 
   @IsString()

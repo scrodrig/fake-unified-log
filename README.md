@@ -2,8 +2,6 @@
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
 
-Only for private purposes
-
 ## Description
 
 [Nest](https://github.com/nestjs/nest) Testing framework TypeScript starter repository.
